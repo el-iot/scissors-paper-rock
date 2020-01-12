@@ -1,0 +1,70 @@
+<!DOCTYPE=html>
+<html>
+    <script>
+        function rockPaperScissors(user, com) {
+
+            user = user.toLowerCase()
+            com = com.toLowerCase()
+
+            if (user == com) {
+                return [0, "Draw!"]
+            }
+            if (user == "rock") {
+                if (com == "paper") {
+                return [-1, "You lose! Paper beats Rock"]
+                } else {
+                return [1, "You win! Rock beats Scissors"]
+                }
+            } else if (user == "paper") {
+                if (com == "rock") {
+                return [1, "You win! Paper beats Rock"]
+                } else {
+                return [-1, "Yoo lose! Scissors beats Paper"]
+                }
+            } else {
+                if (com == "rock") {
+                return [-1, "You lose! Rock beats Scissors"]
+                } else {
+                return [1, "Yoo win! Scissors beats Paper"]
+                }
+            }
+        }
+
+        function computerPlay() {
+            let idx = Math.floor(Math.random() * 3);
+            switch(idx) {
+                case 0:
+                    return "Rock";
+                case 1:
+                    return "Paper";
+                case 2:
+                    return "Scissors";
+            }
+        }
+
+        function game() {
+
+            let wins = 0;
+            var i;
+
+            for (i = 0; i < 5; i++) {
+                let player = prompt(`Round ${i + 1}: Rock, Paper or Scissors?`);
+                [result, message] = rockPaperScissors(player, computerPlay())
+                console.log(message)
+                wins += result
+            }
+
+            if (wins > 0) {
+                console.log("You win overall!")
+            } else if (wins == 0) {
+                console.log("Draw overall!")
+            } else {
+                console.log("You lose overall!")
+            }
+    }
+
+    game()
+
+    </script>
+</html>
+
