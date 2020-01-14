@@ -73,8 +73,7 @@ function game(player) {
             metadata['comScore'] += 1
         }
 
-        display(`Round ${metadata['round']} - Player-Score: ${metadata['playerScore']} - Com-Score ${metadata['comScore']}`)
-        display(message)
+        display(`Round ${metadata['round']}      Player-Score: ${metadata['playerScore']}, Com-Score ${metadata['comScore']}       ` + message)
     }
 }
 
