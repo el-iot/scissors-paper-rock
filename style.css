@@ -1,0 +1,23 @@
+#output-log {
+    font-size: 50px;
+    font-family: arial;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    justify-content: space-between;
+}
+
+.button-and-image {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+}

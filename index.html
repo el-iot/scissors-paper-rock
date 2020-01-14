@@ -1,75 +1,34 @@
 <!DOCTYPE=html>
-<html>
+    <html>
+
     <head>
         <title> Scissors Paper Rock </title>
+        <link rel="stylesheet" href="style.css">
     </head>
+
     <body>
-    <script>
-        function rockPaperScissors(user, com) {
 
-            user = user.toLowerCase()
-            com = com.toLowerCase()
+        <div class='button-container'>
+            <div class='button-and-image'>
+                <button type="submit" id="rock" class="special-button">
+                    <img src="images/rock.png" width="200" height="200" alt="submit" />
+                </button>
+            </div>
+            <div class='button-and-image'>
+                <button type="submit" id="paper" class="special-button">
+                    <img src="images/paper.png" width="200" height="200" alt="submit" />
+                </button>
+            </div>
+            <div class='button-and-image'>
+                <button type="submit" id="scissors" class="special-button">
+                    <img src="images/scissors.png" width="200" height="200" alt="submit" />
+                </button>
+            </div>
+        </div>
 
-            if (user == com) {
-                return [0, "Draw!"]
-            }
-            if (user == "rock") {
-                if (com == "paper") {
-                return [-1, "You lose! Paper beats Rock"]
-                } else {
-                return [1, "You win! Rock beats Scissors"]
-                }
-            } else if (user == "paper") {
-                if (com == "rock") {
-                return [1, "You win! Paper beats Rock"]
-                } else {
-                return [-1, "Yoo lose! Scissors beats Paper"]
-                }
-            } else {
-                if (com == "rock") {
-                return [-1, "You lose! Rock beats Scissors"]
-                } else {
-                return [1, "Yoo win! Scissors beats Paper"]
-                }
-            }
-        }
+        <div id='output-log'></div>
+        <script src="script.js"></script>
 
-        function computerPlay() {
-            let idx = Math.floor(Math.random() * 3);
-            switch(idx) {
-                case 0:
-                    return "Rock";
-                case 1:
-                    return "Paper";
-                case 2:
-                    return "Scissors";
-            }
-        }
-
-        function game() {
-
-            let wins = 0;
-            var i;
-
-            for (i = 0; i < 5; i++) {
-                let player = prompt(`Round ${i + 1}: Rock, Paper or Scissors?`);
-                [result, message] = rockPaperScissors(player, computerPlay())
-                console.log(message)
-                wins += result
-            }
-
-            if (wins > 0) {
-                console.log("You win overall!")
-            } else if (wins == 0) {
-                console.log("Draw overall!")
-            } else {
-                console.log("You lose overall!")
-            }
-    }
-
-    game()
-
-    </script>
     </body>
-</html>
 
+    </html>
